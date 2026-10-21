@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/earendil-works/pi",
+  "version": "1.1.0",
+  "revision": "abe508e1b89912adde45528136c3221eb69acdd7",
+  "schemaSha256": "8787918132dbf7aaee1be2ab30ee6306c715dad609cd85e448df595bb02e2a56",
+  "paths": [
+    "packages/coding-agent/src/modes/interactive/theme/theme-schema.json"
+  ],
+  "checked": "2026-10-21",
+  "contract": "json"
+}

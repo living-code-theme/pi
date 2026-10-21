@@ -1,0 +1,29 @@
+{
+  "$schema": "https://living-code.dev/port.schema.json",
+  "schemaVersion": 1,
+  "name": "Pi",
+  "slug": "pi",
+  "group": "AI & Agents",
+  "emoji": "🥧",
+  "description": "Living Code for Pi: schema-complete custom themes for messages, tools, thinking levels, syntax, Markdown and HTML exports.",
+  "homepage": "https://pi.dev",
+  "quick": "Install the native theme files",
+  "aliases": [
+    "pi coding agent",
+    "pi agent",
+    "pi-mono"
+  ],
+  "flavors": [
+    "night",
+    "frost",
+    "paper",
+    "signal"
+  ],
+  "files": [
+    "themes/living-code-night.json",
+    "themes/living-code-frost.json",
+    "themes/living-code-paper.json",
+    "themes/living-code-signal.json"
+  ],
+  "images": []
+}
