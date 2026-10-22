@@ -83,6 +83,7 @@ def renderer_env():
     if mesa := os.environ.get('CAPTURE_MESA'):
         # Both Xvfb's GLX server and Kitty's client must use the locked Mesa, not host drivers.
         env.update(__EGL_VENDOR_LIBRARY_FILENAMES=f'{mesa}/share/glvnd/egl_vendor.d/50_mesa.json',
+                   __GLX_VENDOR_LIBRARY_NAME='mesa', LD_LIBRARY_PATH=f'{mesa}/lib',
                    LIBGL_DRIVERS_PATH=f'{mesa}/lib/dri', GALLIUM_DRIVER='llvmpipe')
     return env
 
