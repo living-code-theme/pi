@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "scene": "Pi native conversation UI with a local fixture session. No model request.",
+  "inputs": {
+    "capture/app.py": "7827c93e16853f42c7ed3d24d8e4dfaf0ef7291570969969cd38ac2f62757adb",
+    "capture/config.json": "24473161f354094a3f03f6d7a73bb19fee64d670897298755508744a8b5048be",
+    "capture/flake.lock": "e3750f7ba25d0b1971722cdd83b2f07e32528980a4d6a9a1ea55177747de5752",
+    "capture/flake.nix": "35a360bce6d9825b9a596c16f2a64c62a760c238e5a27f3ce6de0bf4e1a1e060",
+    "palette/theme.json": "d735cf005e3b2807953226c0119e384f6f8a3d2b3167443371cb302a8c689cdb",
+    "port.json": "6f1c965dff983c0b231133480cbf960fa1fc4667121a04a5a56a48745ffce731",
+    "scripts/capture.py": "6830da447e48a4ab5511012b5222763677214e8a98683b94c60248765202ca9f",
+    "themes/living-code-frost.json": "d1f9e4228c49536c1f98906ae902a3505e43a851b39a896a5b728c82064458e8",
+    "themes/living-code-night.json": "45962de86189bd5674d3e9656705ae605efb0f9004476d35c551ab4b8121ffd4",
+    "themes/living-code-paper.json": "0d9083b9ef7ea659b71e37af97da09fa4840b8fcac5932302bb5d6bd29b03372",
+    "themes/living-code-signal.json": "073faa1b526517ee37dd16206d8c94a88ca8091a25c6e5f270dce15ab52387be"
+  },
+  "images": {
+    "night": {
+      "path": "images/night.png",
+      "sha256": "696db3d799f59167b8264aa7b771f9faf02e474ca20813a2577026ccfb9c14e5",
+      "application": "1.1.0",
+      "paletteColors": [
+        "#00a692",
+        "#05080b",
+        "#090e11",
+        "#12171a",
+        "#1d2226",
+        "#52d7c1",
+        "#747c80",
+        "#8acb83",
+        "#9ae0dd",
+        "#e18c5f",
+        "#e2e9ee"
+      ]
+    },
+    "frost": {
+      "path": "images/frost.png",
+      "sha256": "ea87df3604cc1c6f352e7c947fa819528f5d9c44edf67c8a134e5f1a87361a28",
+      "application": "1.1.0",
+      "paletteColors": [
+        "#0a1016",
+        "#10171c",
+        "#232a30",
+        "#43a997",
+        "#7d8489",
+        "#8ad5c6",
+        "#a2cb9d",
+        "#b6e2df",
+        "#d49c80",
+        "#e2e9ee"
+      ]
+    },
+    "paper": {
+      "path": "images/paper.png",
+      "sha256": "a19ef82e5a62a31c1fd78b84eec8ca912a5b99d40e3d81bca82b3b4c8f32e14d",
+      "application": "1.1.0",
+      "paletteColors": [
+        "#0f695e",
+        "#12171a",
+        "#187d6e",
+        "#1f7074",
+        "#3b7a35",
+        "#6b7378",
+        "#a04f27",
+        "#d2d8dd",
+        "#e0e5e9",
+        "#ebeff2",
+        "#f4f7f9"
+      ]
+    },
+    "signal": {
+      "path": "images/signal.png",
+      "sha256": "3f6dcb4de80153a2fbfc42fd63a58cfe4c55ec2afff754615d2610ac8f433378",
+      "application": "1.1.0",
+      "paletteColors": [
+        "#00a692",
+        "#05080b",
+        "#090e11",
+        "#12171a",
+        "#1d2226",
+        "#747c80",
+        "#e2e9ee"
+      ]
+    }
+  }
+}

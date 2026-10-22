@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "scene": "Pi native conversation UI with a local fixture session. No model request.",
+  "versionCommand": [
+    "pi",
+    "--version"
+  ],
+  "fixtures": []
+}

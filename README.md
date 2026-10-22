@@ -7,17 +7,40 @@
 
 ## Previews
 
-Real application screenshots have not been captured yet.
+<table data-lc-flavors>
+<tr>
+<td width="50%" valign="top">
+<strong>Night</strong><br><sub>Dark · full palette</sub><br><br>
+<a href="images/night.png"><img src="images/night.png" alt="Pi running Living Code Night" width="640"></a>
+</td>
+<td width="50%" valign="top">
+<strong>Frost</strong><br><sub>Dark · softer chroma</sub><br><br>
+<a href="images/frost.png"><img src="images/frost.png" alt="Pi running Living Code Frost" width="640"></a>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<strong>Paper</strong><br><sub>Light · near-white slate</sub><br><br>
+<a href="images/paper.png"><img src="images/paper.png" alt="Pi running Living Code Paper" width="640"></a>
+</td>
+<td width="50%" valign="top">
+<strong>Signal</strong><br><sub>Dark · teal accent</sub><br><br>
+<a href="images/signal.png"><img src="images/signal.png" alt="Pi running Living Code Signal" width="640"></a>
+</td>
+</tr>
+</table>
+
+Select any preview to view the image at full size.
 
 ## Installation
 
-Install as a theme-only Pi package:
-
 ```sh
-pi install git:github.com/living-code-theme/pi
+flavor=night # night, frost, paper, or signal
+curl -fsSL --create-dirs -o "${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}/themes/living-code-$flavor.json" "https://raw.githubusercontent.com/living-code-theme/pi/main/themes/living-code-$flavor.json"
+pi --use-theme "living-code-$flavor"
 ```
 
-Run `/reload` and choose `living-code-night` under `/settings` → **Theme**. Alternatively, copy `themes/*.json` into `~/.pi/agent/themes/` (or your custom `PI_CODING_AGENT_DIR` followed by `/themes/`).
+In an already running Pi session, run `/reload` and choose the installed flavor under `/settings` → **Theme**. `PI_CODING_AGENT_DIR` is respected. Only the theme JSON is downloaded; no package manager, extension, or repository clone is needed.
 
 ## Flavors
 
@@ -26,7 +49,7 @@ Expand a flavor for its full-size preview and activation instructions.
 <details data-lc-flavor="night">
 <summary><strong>Night</strong> · Dark · full palette</summary>
 
-A real application capture is not available yet.
+<p><a href="images/night.png"><img src="images/night.png" alt="Pi running Living Code Night" width="1280"></a></p>
 
 ```sh
 pi --use-theme living-code-night
@@ -37,7 +60,7 @@ pi --use-theme living-code-night
 <details data-lc-flavor="frost">
 <summary><strong>Frost</strong> · Dark · softer chroma</summary>
 
-A real application capture is not available yet.
+<p><a href="images/frost.png"><img src="images/frost.png" alt="Pi running Living Code Frost" width="1280"></a></p>
 
 ```sh
 pi --use-theme living-code-frost
@@ -48,7 +71,7 @@ pi --use-theme living-code-frost
 <details data-lc-flavor="paper">
 <summary><strong>Paper</strong> · Light · near-white slate</summary>
 
-A real application capture is not available yet.
+<p><a href="images/paper.png"><img src="images/paper.png" alt="Pi running Living Code Paper" width="1280"></a></p>
 
 ```sh
 pi --use-theme living-code-paper
@@ -59,7 +82,7 @@ pi --use-theme living-code-paper
 <details data-lc-flavor="signal">
 <summary><strong>Signal</strong> · Dark · teal accent</summary>
 
-A real application capture is not available yet.
+<p><a href="images/signal.png"><img src="images/signal.png" alt="Pi running Living Code Signal" width="1280"></a></p>
 
 ```sh
 pi --use-theme living-code-signal
@@ -74,6 +97,8 @@ Themes include every required color and the optional search, scrollbar and maxim
 ## Compatibility
 
 Verified against the Pi 1.1.0 theme schema and native JSON validator. Requires a Pi release supporting these theme roles. User themes hot-reload when the theme name matches the JSON filename; package themes can be refreshed with `/reload`. Project-scoped resources require project trust. Truecolor is recommended. No provider login or model call is needed to use or validate the theme.
+
+Previews are captured programmatically from the actual application in an isolated profile. See [`capture/app.py`](capture/app.py) for the app-owned recipe and [`images/capture.json`](images/capture.json) for runtime, palette and image provenance. No mock interface is drawn.
 
 ## Contributing
 
