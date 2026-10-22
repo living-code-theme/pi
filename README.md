@@ -3,7 +3,7 @@
 
 <a href="https://living-code.dev"><img src="https://raw.githubusercontent.com/living-code-theme/core/main/assets/brand/favicon.svg" width="64" height="64" alt="Living Code [lc] mark"></a>
 
-# 🥧 Living Code for Pi
+# π Living Code for Pi
 
 **Calm slate. Living color.**<br>Living Code for Pi: schema-complete custom themes for messages, tools, thinking levels, syntax, Markdown and HTML exports.
 

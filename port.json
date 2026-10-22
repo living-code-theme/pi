@@ -4,7 +4,7 @@
   "name": "Pi",
   "slug": "pi",
   "group": "AI & Agents",
-  "emoji": "🥧",
+  "emoji": "π",
   "description": "Living Code for Pi: schema-complete custom themes for messages, tools, thinking levels, syntax, Markdown and HTML exports.",
   "homepage": "https://pi.dev",
   "quick": "Install the native theme files",
