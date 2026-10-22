@@ -90,6 +90,14 @@ Refresh upstream field fixtures deliberately when the application changes; never
 the generator under test. If this repository exposes `pnpm test:native`, it provides an additional optional native
 format/PTY check; its pinned binary setup remains documented in the separate CI job and script.
 
-Packaging verifies committed payloads and capture provenance and includes the README, descriptor, license, native
-files and images. It never rebuilds, adopts a palette or captures UI. CI uploads the installable archive and native
-preview artifacts. Marketplace submissions, release tags and external registry publication remain explicit operations.
+`pnpm package` verifies committed themes, schema contracts and capture provenance, then runs
+`npm pack --ignore-scripts`. It creates `dist/living-code-pi-<version>.tgz` for public package
+`@living-code/pi`. The tarball allowlist contains only themes (plus npm's package.json, README and license);
+it installs no extensions, skills, prompts, development tooling or screenshot files. The `pi-package` keyword
+makes a published package eligible for gallery discovery. It never rebuilds, adopts a palette or captures UI.
+
+Review `publication.json` and the tarball before `npm publish dist/living-code-pi-<version>.tgz --access public --ignore-scripts`,
+or explicitly dispatch the manual `publish-npm` workflow after configuring `NPM_TOKEN` with scope access.
+Neither packaging nor normal CI publishes. After publication users can run `pi install npm:@living-code/pi`;
+Git-based package installation also works before npm publication. Marketplace accounts and release operations
+remain explicit maintainer actions.

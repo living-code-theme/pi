@@ -1,7 +1,8 @@
 {
-  "name": "living-code-pi",
+  "name": "@living-code/pi",
   "version": "0.1.0",
-  "private": true,
+  "files": ["themes/*.json"],
+  "publishConfig": { "access": "public" },
   "type": "module",
   "description": "Living Code for Pi: schema-complete custom themes for messages, tools, thinking levels, syntax, Markdown and HTML exports.",
   "license": "MIT",
@@ -16,7 +17,7 @@
     "node": ">=22.22"
   },
   "livingCode": {
-    "kind": "files"
+    "kind": "npm"
   },
   "scripts": {
     "build": "node scripts/generate.mjs",

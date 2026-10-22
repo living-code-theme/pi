@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "artifacts": ["living-code-pi-{version}.tgz"],
+  "channels": [{ "name": "npm / Pi package gallery", "url": "https://pi.dev/packages", "instructions": "The public package is @living-code/pi, exposing themes only. Verify npm organization access and publish the reviewed tarball with npm publish <tgz> --access public --ignore-scripts, or use this port's manual publish-npm workflow. The pi-package keyword makes the npm package eligible for gallery discovery. Install after publication with pi install npm:@living-code/pi. Git installation from living-code-theme/pi also works without npm publication." }]
+}

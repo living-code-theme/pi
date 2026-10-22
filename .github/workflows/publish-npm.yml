@@ -1,0 +1,23 @@
+# Manual only. Packaging and checks never publish; this workflow requires explicit maintainer dispatch.
+name: publish-npm
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - uses: pnpm/action-setup@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm package
+      - name: Publish the reviewed theme tarball
+        run: npm publish "dist/living-code-pi-$(node -p 'require("./package.json").version').tgz" --access public --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
