@@ -23,5 +23,6 @@ for (const f of resolveAll()) test(f.name + ': upstream Pi schema, all optional 
   assertContrast(theme.colors.searchMatchText, theme.colors.searchMatchBg);
   assert.equal(theme.export.pageBg, f.r('bg'));
   const pkg = JSON.parse(await read('package.json'));
-  assert.deepEqual(pkg.pi, { themes: ['themes/*.json'], extensions: [], skills: [], prompts: [] });
+  const { themes, extensions, skills, prompts } = pkg.pi;
+  assert.deepEqual({ themes, extensions, skills, prompts }, { themes: ['themes/*.json'], extensions: [], skills: [], prompts: [] });
 });

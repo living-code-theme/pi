@@ -94,7 +94,8 @@ format/PTY check; its pinned binary setup remains documented in the separate CI 
 `npm pack --ignore-scripts`. It creates `dist/living-code-pi-<version>.tgz` for public package
 `@living-code/pi`. The tarball allowlist contains only themes (plus npm's package.json, README and license);
 it installs no extensions, skills, prompts, development tooling or screenshot files. The `pi-package` keyword
-makes a published package eligible for gallery discovery. It never rebuilds, adopts a palette or captures UI.
+makes a published package eligible for gallery discovery. The `pi.image` URL in `package.json` uses the committed
+Night screenshot as the gallery preview without bundling images in the tarball. It never rebuilds, adopts a palette or captures UI.
 
 Review `publication.json` and the tarball before `npm publish dist/living-code-pi-<version>.tgz --access public --ignore-scripts`,
 or explicitly dispatch the manual `publish-npm` workflow after configuring `NPM_TOKEN` with scope access.

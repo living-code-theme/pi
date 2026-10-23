@@ -10,7 +10,13 @@ test("the public npm tarball exposes only four themes and legal/documentation fi
   assert.equal(pkg.publishConfig.access, "public"); assert.ok(pkg.keywords.includes("pi-package"));
   const [pack] = JSON.parse(execFileSync("npm", ["pack", "--dry-run", "--ignore-scripts", "--json"], { cwd: root, encoding: "utf8" }));
   assert.deepEqual(pack.files.map(f => f.path).sort(), ["LICENSE", "README.md", "package.json", ...["frost", "night", "paper", "signal"].map(f => `themes/living-code-${f}.json`)].sort());
-  assert.deepEqual(pkg.pi, { themes: ["themes/*.json"], extensions: [], skills: [], prompts: [] });
+  assert.deepEqual(pkg.pi, {
+    image: "https://raw.githubusercontent.com/living-code-theme/pi/main/images/night.png",
+    themes: ["themes/*.json"], extensions: [], skills: [], prompts: []
+  });
+  const preview = new URL(pkg.pi.image);
+  const image = await readFile(new URL(`../${preview.pathname.split("/main/")[1]}`, import.meta.url));
+  assert.ok(image.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])));
 });
 test("CI uploads the npm tarball and tag releases do not publish or regenerate implicitly", async () => {
   const check = await readFile(new URL("../.github/workflows/check.yml", import.meta.url), "utf8");

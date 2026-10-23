@@ -1,8 +1,12 @@
 {
   "name": "@living-code/pi",
-  "version": "0.1.0",
-  "files": ["themes/*.json"],
-  "publishConfig": { "access": "public" },
+  "version": "0.1.1",
+  "files": [
+    "themes/*.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "description": "Living Code for Pi: schema-complete custom themes for messages, tools, thinking levels, syntax, Markdown and HTML exports.",
   "license": "MIT",
@@ -35,6 +39,7 @@
     "living-code"
   ],
   "pi": {
+    "image": "https://raw.githubusercontent.com/living-code-theme/pi/main/images/night.png",
     "themes": [
       "themes/*.json"
     ],
