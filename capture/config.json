@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "scene": "Pi native conversation UI with a local fixture session. No model request.",
+  "scene": "Pi native conversation and syntax highlighting, resuming a labeled local code-review demo. No model request or user credentials.",
   "versionCommand": [
     "pi",
     "--version"
   ],
-  "fixtures": []
+  "fixtures": ["capture/review.md"]
 }

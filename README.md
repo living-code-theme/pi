@@ -105,13 +105,13 @@ pi --use-theme living-code-signal
 
 ## Configuration
 
-Themes include every required color and the optional search, scrollbar and maximum-thinking colors. Export page/panel backgrounds are explicit. In `~/.pi/agent/settings.json`, `"theme": "living-code-paper/living-code-night"` follows the terminal appearance, with the light theme first. Package resources declare only themes: no tools, extensions or prompts are installed.
+Themes include every required color and the optional search, scrollbar and maximum-thinking colors. Export page/panel backgrounds are explicit. All nine exposed `syntax*` roles use the corresponding [Living Code Neovim](https://github.com/living-code-theme/nvim/blob/main/lua/living-code/highlights.lua) roles in every flavor; a pinned reference test protects that mapping. Token recognition still belongs to Pi’s lexer: for example, Pi 1.1.0 combines builtins with types, so those cannot receive separate colors through its nine-token API. In `~/.pi/agent/settings.json`, `"theme": "living-code-paper/living-code-night"` follows the terminal appearance, with the light theme first. Package resources declare only themes: no tools, extensions or prompts are installed.
 
 ## Compatibility
 
 Verified against the Pi 1.1.0 theme schema and native JSON validator. Requires a Pi release supporting these theme roles. User themes hot-reload when the theme name matches the JSON filename; package themes can be refreshed with `/reload`. Project-scoped resources require project trust. Truecolor is recommended. No provider login or model call is needed to use or validate the theme.
 
-Previews are captured programmatically from the actual application in an isolated profile. See [`capture/app.py`](capture/app.py) for the app-owned recipe and [`images/capture.json`](images/capture.json) for runtime, palette and image provenance. No mock interface is drawn.
+Previews are captured programmatically from the actual application in an isolated profile. See [`capture/app.py`](capture/app.py) for the app-owned recipe and [`images/capture.json`](images/capture.json) for runtime, palette and image provenance. No mock interface is drawn. The conversation is a labeled, repository-owned local demo, not a private session or a live model response. Recapturing needs no account, subscription or paid API call.
 
 ## Contributing
 

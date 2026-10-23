@@ -10,8 +10,8 @@ def prepare(c):
     timestamp = '2026-01-01T12:00:00.000Z'
     header = {'type': 'session', 'version': 3, 'id': 'living-code-capture', 'timestamp': timestamp, 'cwd': str(c.work)}
     user = {'type': 'message', 'id': '11111111', 'parentId': None, 'timestamp': timestamp,
-            'message': {'role': 'user', 'content': 'Show the glyph renderer — offline screenshot fixture.', 'timestamp': 1767268800000}}
-    text = '''## Glyph field\n\nThis is **local fixture content**, rendered by Pi without a model request.\n\n```typescript\nconst RADIUS = 0.35;\nexport async function render(field: GlyphField) {\n  if (!field.gpu) return fallback();\n  await field.animate({ opacity: 1, ease: "power3.out" });\n  return field.cells.length;\n}\n```\n\n- Types, functions and values stay distinct.\n- Muted surfaces keep the code in focus.\n'''
+            'message': {'role': 'user', 'content': 'Review the glyph render loop and suggest a safer implementation. (Local demo)', 'timestamp': 1767268800000}}
+    text = (c.root / 'capture/review.md').read_text()
     assistant = {'type': 'message', 'id': '22222222', 'parentId': '11111111', 'timestamp': timestamp,
         'message': {'role': 'assistant', 'content': [{'type': 'text', 'text': text}], 'api': 'anthropic-messages',
             'provider': 'anthropic', 'model': 'claude-sonnet-4-5', 'stopReason': 'stop', 'timestamp': 1767268800000,
@@ -23,4 +23,4 @@ def prepare(c):
 
 
 def drive(c):
-    c.wait_text(r'local fixture content|Types, functions')
+    c.wait_text(r'add boundary tests next')
