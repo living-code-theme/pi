@@ -1,4 +1,4 @@
-# Manual only. Packaging and checks never publish; this workflow requires explicit maintainer dispatch.
+# Manual only. Packaging and checks never publish; dispatch explicitly using npm trusted publishing (OIDC).
 name: publish-npm
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # npm provenance attestation; also enables npm trusted publishing (OIDC)
+      id-token: write # Required for npm trusted publishing (OIDC) and provenance.
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -24,5 +24,3 @@ jobs:
       - run: pnpm package
       - name: Publish the reviewed theme tarball
         run: npm publish "./dist/living-code-pi-$(node -p 'require("./package.json").version').tgz" --access public --ignore-scripts --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

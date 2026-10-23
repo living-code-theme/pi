@@ -98,7 +98,8 @@ makes a published package eligible for gallery discovery. The `pi.image` URL in 
 Night screenshot as the gallery preview without bundling images in the tarball. It never rebuilds, adopts a palette or captures UI.
 
 Review `publication.json` and the tarball before `npm publish dist/living-code-pi-<version>.tgz --access public --ignore-scripts`,
-or explicitly dispatch the manual `publish-npm` workflow after configuring `NPM_TOKEN` with scope access.
-Neither packaging nor normal CI publishes. After publication users can run `pi install npm:@living-code/pi`;
+or explicitly dispatch the manual `publish-npm` workflow using the linked npm trusted publisher (OIDC).
+The workflow needs no npm token secret. npm validates a newly linked publisher on its first successful publish;
+use an unpublished package version. Neither packaging nor normal CI publishes. After publication users can run `pi install npm:@living-code/pi`;
 Git-based package installation also works before npm publication. Marketplace accounts and release operations
 remain explicit maintainer actions.
