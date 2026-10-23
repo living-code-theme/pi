@@ -23,6 +23,6 @@ jobs:
       - run: pnpm test
       - run: pnpm package
       - name: Publish the reviewed theme tarball
-        run: npm publish "dist/living-code-pi-$(node -p 'require("./package.json").version').tgz" --access public --ignore-scripts --provenance
+        run: npm publish "./dist/living-code-pi-$(node -p 'require("./package.json").version').tgz" --access public --ignore-scripts --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
