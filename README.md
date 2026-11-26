@@ -47,13 +47,22 @@ Select any preview to view the image at full size.
 
 ## Installation
 
+**Pi package (all flavors):** install [`@living-code/pi`](https://www.npmjs.com/package/@living-code/pi) directly from npm:
+
+```sh
+pi install npm:@living-code/pi
+pi --use-theme living-code-night
+```
+
+**Single theme file (no package manager):** download one flavor directly into Pi’s themes directory:
+
 ```sh
 flavor=night # night, frost, paper, or signal
 curl -fsSL --create-dirs -o "${PI_CODING_AGENT_DIR:-$HOME/.pi/agent}/themes/living-code-$flavor.json" "https://raw.githubusercontent.com/living-code-theme/pi/main/themes/living-code-$flavor.json"
 pi --use-theme "living-code-$flavor"
 ```
 
-In an already running Pi session, run `/reload` and choose the installed flavor under `/settings` → **Theme**. `PI_CODING_AGENT_DIR` is respected. Only the theme JSON is downloaded; no package manager, extension, or repository clone is needed.
+In an already running Pi session, run `/reload` and choose the installed flavor under `/settings` → **Theme**. `PI_CODING_AGENT_DIR` is respected. Both methods install themes only; no tools, extensions, or repository clone are added.
 
 ## Flavors
 

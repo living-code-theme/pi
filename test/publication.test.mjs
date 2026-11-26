@@ -71,7 +71,7 @@ fs.appendFileSync(process.env.INSTALL_LOG, JSON.stringify({source, destination:t
     HERDR_CONFIG_PATH: join(variables.herdr, "config.toml"), CONFIG_DIR: variables.docker, RIO_CONFIG_HOME: variables.rio,
     PORT_SLUG: meta.slug, PORT_ROOT: root, INSTALL_LOG: log };
   const recipe = JSON.parse(await readFile(join(root, "capture/install.json"), "utf8"));
-  const block = installation.match(/```sh\n([\s\S]*?)\n```/)?.[1];
+  const block = [...installation.matchAll(/```sh\n([\s\S]*?)\n```/g)].map(match => match[1]).find(snippet => snippet.includes("curl -fsSL"));
   assert.ok(block, "provide a copyable shell download block");
   for (const flavor of meta.flavors) {
     await writeFile(log, "");
