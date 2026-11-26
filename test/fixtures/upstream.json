@@ -1,11 +1,12 @@
 {
   "repository": "https://github.com/earendil-works/pi",
-  "version": "1.1.0",
-  "revision": "abe508e1b89912adde45528136c3221eb69acdd7",
+  "version": "1.6.1",
+  "revision": "6ebd63108dab522ba4acbaf3a2f0cfc4314e5279",
   "schemaSha256": "8787918132dbf7aaee1be2ab30ee6306c715dad609cd85e448df595bb02e2a56",
   "paths": [
-    "packages/coding-agent/src/modes/interactive/theme/theme-schema.json"
+    "apps/p2/src/tui/theme/theme-tokens.ts",
+    "apps/p2/src/tui/theme/theme-schema.ts"
   ],
-  "checked": "2026-10-21",
+  "checked": "2026-11-26",
   "contract": "json"
 }
